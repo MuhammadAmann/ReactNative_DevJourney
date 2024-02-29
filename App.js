@@ -6,7 +6,6 @@ const App = () => {
     <View>
       <Text>React Native </Text>
       <Text>Dev Journey </Text>
-    <Text>A Reposetory to start learning and showcasing of React Native</Text>
     </View>
   );
 };
