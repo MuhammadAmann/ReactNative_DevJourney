@@ -19,6 +19,7 @@ const StackNavigations = ({}) => {
       <Stack.Screen name="StacksNavigations" component={StacksNavigations} />
       <Stack.Screen name="ScreenOne" component={ScreenOne} />
       <Stack.Screen name="ScreenTwo" component={ScreenTwo} />
+      <Stack.Screen name="PressableButton" component={PressableButton} />
     </Stack.Navigator>
   );
 };
