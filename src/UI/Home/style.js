@@ -6,7 +6,7 @@ import {AppColors} from '../../Assets/AppColors';
 export const styles = StyleSheet.create({
   main: {
     flex: 1,
-    backgroundColor: AppColors.halfWhite,
+    backgroundColor: AppColors.backgroundColor,
    
   },
   top: {
@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
   ReactNative: {
     fontSize: 24 * fontRef,
     fontWeight: 'bold',
-    color: '#FFF',
+    color: AppColors.lightYellow,
   },
   Dev: {
     fontSize: 30 * fontRef,
@@ -39,28 +39,28 @@ export const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   buttonStyles: {
-    backgroundColor: AppColors.primaryColor,
+    backgroundColor: "#FFF",
     width: 160 * widthRef,
     height: 60 * heightRef,
     margin: 5,
-    borderRadius: 12,
+    borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
-    borderColor: AppColors.secondaryColor,
+    borderColor: AppColors.primaryLightColor,
     borderWidth: 0.5,
     elevation: 4,
   },
   componentName: {
-    color: AppColors.halfWhite,
+    color: AppColors.primaryLightColor,
     fontSize: 14,
     fontWeight: '600',
   },
   homeScreen:{
-    color: AppColors.secondaryColor,
+    color: AppColors.halfWhite,
     fontSize: 14 * fontRef,
     position: 'absolute',
     bottom: 10,
     fontWeight: '300',
-    
+    textDecorationLine: 'underline',
   }
 });

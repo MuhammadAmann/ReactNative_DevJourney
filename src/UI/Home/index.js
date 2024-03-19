@@ -21,7 +21,7 @@ const HomeScreen = ({navigation}) => {
       <View style={styles.top}>
         <Image style={styles.rnImage} source={Assets.ReactNative} />
         <Text style={styles.ReactNative}>React Native - Dev Journey </Text>
-        <Text style={styles.homeScreen}>Home Screen</Text>
+        <Text style={styles.homeScreen}>Dev Inventive</Text>
       </View>
       <FlatList
       style={styles.componentList}

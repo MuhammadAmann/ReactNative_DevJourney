@@ -1,7 +1,9 @@
 /* eslint-disable prettier/prettier */
 export const AppColors = {
-    primaryColor: '#272727',
-    secondaryColor: '#b7e52a',
+    primaryColor: '#160F53',
+    backgroundColor: '#EAE9EF',
+    primaryLightColor: 'rgba(22, 14, 87, 0.8)',
+    secondaryColor: '#8452D4',
     halfWhite: '#e3e6e7',
-    lightYellow: '#f1d55d'
+    lightYellow: '#F5D551',
   }
