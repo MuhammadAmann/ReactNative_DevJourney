@@ -1,17 +1,29 @@
 /* eslint-disable prettier/prettier */
-import {View, Text, Button, Image, FlatList, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  Button,
+  Image,
+  FlatList,
+  TouchableOpacity,
+  Pressable,
+} from 'react-native';
 import React from 'react';
 import {styles} from './style';
 import Assets from '../../Assets';
 
 const componentList = [
   {
-    componentName: 'PressAble Buttons',
-    navigationName: 'PressableButton',
+    componentName: 'Learning Material',
+    navigationName: 'Beautiful_UIs',
+    description:
+      'Press the button to explore components, functionalities, and other valuable resources to enhance your skills',
   },
   {
-    componentName: 'Stack Navigations',
+    componentName: 'Beautiful UIs',
     navigationName: 'StacksNavigations',
+    description:
+      'Embark on a journey of beautiful UI designs! Click the button to access the page and unlock inspiration for your next project',
   },
 ];
 
@@ -24,14 +36,19 @@ const HomeScreen = ({navigation}) => {
         <Text style={styles.homeScreen}>Dev Inventive</Text>
       </View>
       <FlatList
-      style={styles.componentList}
+        style={styles.componentList}
         data={componentList}
-        showsHorizontalScrollIndicator = {false}
-        numColumns={2}
+        showsHorizontalScrollIndicator={false}
         renderItem={({item}) => (
-          <TouchableOpacity onPress={()=>navigation.navigate(item.navigationName)} style={styles.buttonStyles}>
-            <Text style={styles.componentName}>{item.componentName}</Text>
-          </TouchableOpacity>
+          <Pressable
+            // onPress={()=>navigation.navigate(item.navigationName)}
+            style={styles.buttonStyles}>
+            <View style={styles.iconView}></View>
+            <View style={styles.buttonContent}>
+              <Text style={styles.componentName}>{item.componentName}</Text>
+              <Text style={styles.description}>{item.description}</Text>
+            </View>
+          </Pressable>
         )}
       />
     </View>

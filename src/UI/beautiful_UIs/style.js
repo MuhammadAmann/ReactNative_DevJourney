@@ -34,25 +34,25 @@ export const styles = StyleSheet.create({
     marginBottom: 30 * heightRef,
   },
   componentList: {
-    marginTop: 50 * heightRef,
-    flex: 1,
-    
+    marginTop: 20 * heightRef,
+    flexWrap: 'wrap',
+    alignSelf: 'center',
   },
   buttonStyles: {
     backgroundColor: "#FFF",
-    marginVertical: 10 * heightRef,
-    marginHorizontal: 24 * heightRef,
+    width: 160 * widthRef,
+    height: 60 * heightRef,
+    margin: 5,
     borderRadius: 10,
     alignItems: 'center',
+    justifyContent: 'center',
     borderColor: AppColors.primaryLightColor,
     borderWidth: 0.5,
     elevation: 4,
-    padding:15,
-    flexDirection: 'row'
   },
   componentName: {
-    color: AppColors.secondaryColor,
-    fontSize: 24 * fontRef,
+    color: AppColors.primaryLightColor,
+    fontSize: 14,
     fontWeight: '600',
   },
   homeScreen:{
@@ -62,20 +62,5 @@ export const styles = StyleSheet.create({
     bottom: 10,
     fontWeight: '300',
     textDecorationLine: 'underline',
-  },
-  iconView:{
-    height: 50 * widthRef,
-    width: 50 * widthRef,
-    borderRadius: 100,
-    backgroundColor: AppColors.primaryLightColor,
-    marginRight: 14 * widthRef
-  },
-  buttonContent:{
-    flex: 1
-  },
-  description:{
-    fontSize: 14 * fontRef,
-    color: "#121212",
-    textAlign: 'justify'
   }
 });
