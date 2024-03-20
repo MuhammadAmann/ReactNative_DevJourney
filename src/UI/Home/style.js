@@ -34,7 +34,7 @@ export const styles = StyleSheet.create({
     marginBottom: 30 * heightRef,
   },
   componentList: {
-    marginTop: 50 * heightRef,
+    marginTop: 30 * heightRef,
     flex: 1,
     
   },
@@ -68,10 +68,13 @@ export const styles = StyleSheet.create({
     width: 50 * widthRef,
     borderRadius: 100,
     backgroundColor: AppColors.primaryLightColor,
-    marginRight: 14 * widthRef
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   buttonContent:{
-    flex: 1
+    flex: 1,
+    marginHorizontal: 14 * widthRef,
+
   },
   description:{
     fontSize: 14 * fontRef,
