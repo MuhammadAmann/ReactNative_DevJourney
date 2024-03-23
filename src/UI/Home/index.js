@@ -25,7 +25,7 @@ const componentList = [
   },
   {
     componentName: 'Beautiful UIs',
-    navigationName: 'StacksNavigations',
+    navigationName: 'Beautiful_UIs',
     description:
       'Press the button to access the page and unlock inspiration for your next project',
       iconName: 'butterfly-outline',

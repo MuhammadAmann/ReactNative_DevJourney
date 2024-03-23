@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import {StyleSheet} from 'react-native';
-import {fontRef, heightRef, widthRef} from '../../Config/screenSizes';
-import {AppColors} from '../../Assets/AppColors';
+import { AppColors } from '../../Assets/AppColors';
+import { fontRef, heightRef, widthRef } from '../../Config/screenSizes';
 
 export const styles = StyleSheet.create({
   main: {
@@ -51,7 +51,7 @@ export const styles = StyleSheet.create({
     elevation: 4,
   },
   componentName: {
-    color: AppColors.primaryLightColor,
+    color: AppColors.secondaryColor,
     fontSize: 14,
     fontWeight: '600',
   },
@@ -62,5 +62,20 @@ export const styles = StyleSheet.create({
     bottom: 10,
     fontWeight: '300',
     textDecorationLine: 'underline',
-  }
+  },
+  Dev_Inventive:{
+    height: 20,
+    width: 20,
+  },
+  header:{
+    flexDirection: 'row',
+    alignItems:'center',
+    height: 80 * heightRef,
+    justifyContent: 'space-around'
+  },
+  headerTitle:{
+    fontSize: 24 * fontRef,
+    fontWeight: '700',
+    color: AppColors.primaryColor
+  },
 });

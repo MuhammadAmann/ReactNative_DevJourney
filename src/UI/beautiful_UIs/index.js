@@ -1,8 +1,10 @@
 /* eslint-disable prettier/prettier */
-import {View, Text, Image, FlatList, TouchableOpacity} from 'react-native';
+import {View, Text, Image, FlatList, TouchableOpacity, Pressable} from 'react-native';
 import React from 'react';
 import { styles } from './style';
 import Assets from '../../Assets';
+import Icon, { IconType } from 'react-native-dynamic-vector-icons';
+import { AppColors } from '../../Assets/AppColors';
 
 const componentList = [
     {
@@ -17,11 +19,19 @@ const componentList = [
 const Beautiful_UIs = ({navigation}) => {
   return (
     <View style={styles.main}>
-      {/* <View style={styles.top}>
-        <Image style={styles.rnImage} source={Assets.ReactNative} />
-        <Text style={styles.ReactNative}>React Native - Dev Journey </Text>
-        <Text style={styles.homeScreen}>Dev Inventive</Text>
-      </View> */}
+      <View style={styles.header}>
+        <Pressable  
+        onPress={()=>navigation.goBack()}>
+        <Icon
+          name="chevron-left"
+          type={IconType.FontAwesome5}
+          size={20}
+          color={AppColors.secondaryColor}
+        />
+        </Pressable>
+        <Text style={styles.headerTitle}>Beautiful UIs</Text>
+          <Image source={Assets.Dev_Inventive} style={styles.Dev_Inventive} />
+      </View>
       <FlatList
         style={styles.componentList}
         data={componentList}
