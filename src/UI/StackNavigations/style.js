@@ -32,7 +32,7 @@ export const styles = StyleSheet.create({
     },
     backText:{
         fontSize: 14 * fontRef,
-        color: '#483d8b',
+        color: '#FFF',
         fontWeight:'500'
     },
     Back:{

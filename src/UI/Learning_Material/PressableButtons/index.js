@@ -1,13 +1,13 @@
 /* eslint-disable prettier/prettier */
-import { View, Text } from 'react-native'
-import React from 'react'
+import {View, Text} from 'react-native';
+import React from 'react';
 
-const PressableButton = () => {
+const PressAbleButtons = () => {
   return (
     <View>
-      <Text>Pressable Button</Text>
+      <Text>PressAble Buttons</Text>
     </View>
-  )
-}
+  );
+};
 
-export default PressableButton
+export default PressAbleButtons;

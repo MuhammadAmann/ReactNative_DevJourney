@@ -17,7 +17,7 @@ import { AppColors } from '../../Assets/AppColors';
 const componentList = [
   {
     componentName: 'Learning Material',
-    navigationName: 'Beautiful_UIs',
+    navigationName: 'LearningMaterial',
     description:
       'Press the button to explore components, functionalities, and other valuable resources to enhance your skills',
       iconName: 'book-outline',
