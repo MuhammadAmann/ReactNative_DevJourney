@@ -1,5 +1,12 @@
 /* eslint-disable prettier/prettier */
-import {View, Text, FlatList, TouchableOpacity, Image, Pressable} from 'react-native';
+import {
+  View,
+  Text,
+  FlatList,
+  TouchableOpacity,
+  Image,
+  Pressable,
+} from 'react-native';
 import React from 'react';
 import Icon, {IconType} from 'react-native-dynamic-vector-icons';
 import {AppColors} from '../../Assets/AppColors';
@@ -20,17 +27,18 @@ const LearningMaterial = ({navigation}) => {
   return (
     <View style={styles.main}>
       <View style={styles.header}>
-        <Pressable  
-        onPress={()=>navigation.goBack()}>
-        <Icon
-          name="chevron-left"
-          type={IconType.FontAwesome5}
-          size={20}
-          color={AppColors.secondaryColor}
-        />
-        </Pressable>
-        <Text style={styles.headerTitle}>Learning Material</Text>
-          <Image source={Assets.Dev_Inventive} style={styles.Dev_Inventive} />
+        <View style={styles.headerRight}>
+          <Pressable onPress={() => navigation.goBack()}>
+            <Icon
+              name="chevron-left"
+              type={IconType.FontAwesome5}
+              size={20}
+              color={AppColors.secondaryColor}
+            />
+          </Pressable>
+          <Text style={styles.headerTitle}>Learning Material</Text>
+        </View>
+        <Image source={Assets.Dev_Inventive} style={styles.Dev_Inventive} />
       </View>
       <FlatList
         style={styles.componentList}
@@ -38,11 +46,16 @@ const LearningMaterial = ({navigation}) => {
         showsHorizontalScrollIndicator={false}
         numColumns={2}
         renderItem={({item}) => (
-          <TouchableOpacity
+          <Pressable
             onPress={() => navigation.navigate(item.navigationName)}
             style={styles.buttonStyles}>
+            <Image
+              source={Assets.Stacks}
+              style={styles.componentThumbnail}
+            />
+
             <Text style={styles.componentName}>{item.componentName}</Text>
-          </TouchableOpacity>
+          </Pressable>
         )}
       />
     </View>

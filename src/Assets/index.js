@@ -3,4 +3,5 @@ export default {
  ReactNative: require("../Assets/Images/RN.png"),
  beautifulUI_Icon: require("../Assets/Images/beautifulUI.png"),
  Dev_Inventive: require("../Assets/Images/Dev.png"),
+ Stacks: require("../Assets/Images/stacks.png"),
 }

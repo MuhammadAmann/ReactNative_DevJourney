@@ -20,6 +20,7 @@ const Beautiful_UIs = ({navigation}) => {
   return (
     <View style={styles.main}>
       <View style={styles.header}>
+        <View style={styles.headerRight}>
         <Pressable  
         onPress={()=>navigation.goBack()}>
         <Icon
@@ -30,6 +31,7 @@ const Beautiful_UIs = ({navigation}) => {
         />
         </Pressable>
         <Text style={styles.headerTitle}>Beautiful UIs</Text>
+        </View>
           <Image source={Assets.Dev_Inventive} style={styles.Dev_Inventive} />
       </View>
       <FlatList

@@ -41,7 +41,7 @@ export const styles = StyleSheet.create({
   buttonStyles: {
     backgroundColor: "#FFF",
     width: 160 * widthRef,
-    height: 60 * heightRef,
+    // height: 60 * heightRef,
     margin: 5,
     borderRadius: 10,
     alignItems: 'center',
@@ -49,11 +49,15 @@ export const styles = StyleSheet.create({
     borderColor: AppColors.primaryLightColor,
     borderWidth: 0.5,
     elevation: 4,
+    padding: 10,
+    // paddingBottom: 10,
+    // paddingHorizontal: 12
   },
   componentName: {
     color: AppColors.secondaryColor,
-    fontSize: 14,
-    fontWeight: '600',
+    fontSize: 16,
+    fontWeight: '700',
+    textAlign: 'center',
   },
   homeScreen:{
     color: AppColors.halfWhite,
@@ -71,11 +75,25 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems:'center',
     height: 80 * heightRef,
-    justifyContent: 'space-around'
+    marginHorizontal: 24,
+    justifyContent: 'space-between'
   },
   headerTitle:{
     fontSize: 24 * fontRef,
     fontWeight: '700',
-    color: AppColors.primaryColor
+    color: AppColors.primaryColor,
+    marginLeft: 10
   },
+  headerRight:{
+    flexDirection: 'row',
+    alignItems: 'center'
+},
+componentThumbnail:{
+  height: 80,
+  width: 130,
+  marginBottom: 12 * heightRef,
+  resizeMode: 'cover',
+  borderRadius: 6,
+  // marginBottom: 10,
+}
 });

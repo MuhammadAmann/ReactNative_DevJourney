@@ -71,11 +71,17 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems:'center',
     height: 80 * heightRef,
-    justifyContent: 'space-around'
+    marginHorizontal: 24,
+    justifyContent: 'space-between'
   },
   headerTitle:{
     fontSize: 24 * fontRef,
     fontWeight: '700',
-    color: AppColors.primaryColor
+    color: AppColors.primaryColor,
+    marginLeft: 10
   },
+  headerRight:{
+    flexDirection: 'row',
+    alignItems: 'center'
+}
 });
