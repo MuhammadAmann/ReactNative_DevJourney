@@ -1,13 +1,12 @@
 /* eslint-disable prettier/prettier */
 import {StyleSheet} from 'react-native';
-import { AppColors } from '../../Assets/AppColors';
-import { fontRef, heightRef, widthRef } from '../../Config/screenSizes';
+import {AppColors} from '../../Assets/AppColors';
+import {fontRef, heightRef, widthRef} from '../../Config/screenSizes';
 
 export const styles = StyleSheet.create({
   main: {
     flex: 1,
     backgroundColor: AppColors.backgroundColor,
-   
   },
   top: {
     backgroundColor: AppColors.primaryColor,
@@ -17,7 +16,7 @@ export const styles = StyleSheet.create({
     borderBottomRightRadius: 20,
     alignItems: 'center',
     justifyContent: 'center',
-    elevation: 10
+    elevation: 10,
   },
   ReactNative: {
     fontSize: 24 * fontRef,
@@ -34,28 +33,32 @@ export const styles = StyleSheet.create({
     marginBottom: 30 * heightRef,
   },
   componentList: {
-    marginTop: 20 * heightRef,
+    marginTop: 10 * heightRef,
     flexWrap: 'wrap',
     alignSelf: 'center',
   },
   buttonStyles: {
-    backgroundColor: "#FFF",
+    backgroundColor: '#FFF',
     width: 160 * widthRef,
-    height: 60 * heightRef,
-    margin: 5,
-    borderRadius: 10,
+    height: 150 * heightRef,
+    marginHorizontal: 5,
+    borderRadius: 6,
     alignItems: 'center',
     justifyContent: 'center',
     borderColor: AppColors.primaryLightColor,
-    borderWidth: 0.5,
     elevation: 4,
+    // padding: 10,
+    marginTop: 15,
+    marginBottom: 5,
+    overflow: 'hidden',
   },
   componentName: {
-    color: AppColors.secondaryColor,
-    fontSize: 14,
-    fontWeight: '600',
+    color: AppColors.halfWhite,
+    fontSize: 16,
+    fontWeight: '700',
+    textAlign: 'center',
   },
-  homeScreen:{
+  homeScreen: {
     color: AppColors.halfWhite,
     fontSize: 14 * fontRef,
     position: 'absolute',
@@ -63,25 +66,49 @@ export const styles = StyleSheet.create({
     fontWeight: '300',
     textDecorationLine: 'underline',
   },
-  Dev_Inventive:{
+  Dev_Inventive: {
     height: 20,
     width: 20,
   },
-  header:{
+  header: {
     flexDirection: 'row',
-    alignItems:'center',
+    alignItems: 'center',
     height: 80 * heightRef,
     marginHorizontal: 24,
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
-  headerTitle:{
-    fontSize: 24 * fontRef,
-    fontWeight: '700',
-    color: AppColors.primaryColor,
-    marginLeft: 10
+  headerTitle: {
+    fontSize: 20 * fontRef,
+    fontWeight: '400',
+    // color: AppColors.primaryColor,
+    color: 'grey',
+    marginLeft: 10,
   },
-  headerRight:{
+  headerRight: {
     flexDirection: 'row',
-    alignItems: 'center'
-}
+    alignItems: 'center',
+  },
+  componentThumbnail: {
+    width: 160,
+    resizeMode: 'contain',
+    borderRadius: 6,
+  },
+  nameView: {
+    backgroundColor: AppColors.primaryColor,
+    marginHorizontal: 5,
+    marginTop: 2,
+    borderRadius: 6,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderColor: AppColors.primaryLightColor,
+    borderWidth: 0.5,
+    elevation: 4,
+    padding: 10,
+  },
+  learning:{
+    fontSize: 24,
+    fontWeight: '700',
+    color: '#121212',
+    textAlign:'center'
+  }
 });
