@@ -25,8 +25,7 @@ const componentList = [
   {
     componentName: 'Stack Navigations',
     navigationName: 'StacksNavigations',
-    // image: Assets.Buttons,
-image: require('../../Assets/Images/one.jpg')
+    image: Assets.Buttons,
   },
   ];
 const Beautiful_UIs = ({navigation}) => {
