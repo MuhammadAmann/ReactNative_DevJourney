@@ -35,7 +35,7 @@ export const styles = StyleSheet.create({
   componentList: {
     marginTop: 10 * heightRef,
     flexWrap: 'wrap',
-    alignSelf: 'center',
+    paddingHorizontal: 20
   },
   buttonStyles: {
     backgroundColor: '#FFF',

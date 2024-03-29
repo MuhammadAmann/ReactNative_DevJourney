@@ -35,7 +35,7 @@ export const styles = StyleSheet.create({
   componentList: {
     marginTop: 10 * heightRef,
     flexWrap: 'wrap',
-    alignSelf: 'center',
+    paddingHorizontal: 20,
   },
   buttonStyles: {
     backgroundColor: '#FFF',
@@ -105,10 +105,10 @@ export const styles = StyleSheet.create({
     elevation: 4,
     padding: 10,
   },
-  learning:{
+  learning: {
     fontSize: 24,
     fontWeight: '700',
     color: '#121212',
-    textAlign:'center'
-  }
+    textAlign: 'center',
+  },
 });

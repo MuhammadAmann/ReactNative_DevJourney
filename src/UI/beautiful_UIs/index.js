@@ -8,25 +8,11 @@ import { AppColors } from '../../Assets/AppColors';
 
 const componentList = [
   {
-    componentName: 'PressAble Buttons',
-    navigationName: 'PressAbleButtons',
-    image: Assets.Buttons,
+    componentName: 'Food List',
+    navigationName: 'FoodList',
+    image: Assets.FoodList,
   },
-  {
-    componentName: 'Stack Navigations',
-    navigationName: 'StacksNavigations',
-    image: Assets.Stacks,
-  },
-  {
-    componentName: 'Stack Navigations',
-    navigationName: 'StacksNavigations',
-    image: Assets.Buttons,
-  },
-  {
-    componentName: 'Stack Navigations',
-    navigationName: 'StacksNavigations',
-    image: Assets.Buttons,
-  },
+  
   ];
 const Beautiful_UIs = ({navigation}) => {
   return (

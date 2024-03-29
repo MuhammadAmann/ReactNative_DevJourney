@@ -19,41 +19,6 @@ const componentList = [
     navigationName: 'PressAbleButtons',
     image: Assets.Buttons,
   },
-  {
-    componentName: 'Stack Navigations',
-    navigationName: 'StacksNavigations',
-    image: Assets.Stacks,
-  },
-  {
-    componentName: 'Stack Navigations',
-    navigationName: 'StacksNavigations',
-    image: Assets.Buttons,
-  },
-  {
-    componentName: 'Stack Navigations',
-    navigationName: 'StacksNavigations',
-    image: Assets.Buttons,
-  },
-  {
-    componentName: 'Stack Navigations',
-    navigationName: 'StacksNavigations',
-    image: Assets.Buttons,
-  },
-  {
-    componentName: 'Stack Navigations',
-    navigationName: 'StacksNavigations',
-    image: Assets.Buttons,
-  },
-  {
-    componentName: 'Stack Navigations',
-    navigationName: 'StacksNavigations',
-    image: Assets.Buttons,
-  },
-  {
-    componentName: 'Stack Navigations',
-    navigationName: 'StacksNavigations',
-    image: Assets.Buttons,
-  },
 ];
 const LearningMaterial = ({navigation}) => {
   return (

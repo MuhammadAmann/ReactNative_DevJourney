@@ -5,4 +5,5 @@ export default {
  Dev_Inventive: require("../Assets/Images/Dev.png"),
  Stacks: require("../Assets/Images/stacks.png"),
  Buttons: require("../Assets/Images/buttons.jpg"),
+ FoodList: require("../Assets/Images/foodList.png"),
 }
