@@ -64,50 +64,89 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     marginRight: 10,
     borderTopLeftRadius: 10,
-    borderBottomRightRadius: 10
+    borderBottomRightRadius: 10,
   },
-  popular:{
+  popular: {
     fontSize: 20,
     color: '#121212',
-    fontWeight: '700'
+    fontWeight: '700',
   },
-  Restaurants:{
+  Restaurants: {
     fontSize: 20,
     color: '#121212',
-    fontWeight: '700'
+    fontWeight: '700',
   },
-  seeAll:{
-    fontSize : 18 * fontRef,
-    color: Colors.primaryColor
+  seeAll: {
+    fontSize: 18 * fontRef,
+    color: Colors.primaryColor,
   },
-  popularFoods:{
+  popularFoods: {
     paddingHorizontal: 20 * heightRef,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginBottom: 15 * heightRef
+    marginBottom: 15 * heightRef,
   },
-  restaurantsFoods:{
+  restaurantsFoods: {
     paddingHorizontal: 20 * heightRef,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginBottom: 20 * heightRef
+    marginBottom: 5 * heightRef,
   },
-  foodImage:{
+  foodImage: {
     height: 200 * heightRef,
     width: 120 * widthRef,
     borderRadius: 20,
     resizeMode: 'cover',
   },
-  imageView:{
+  imageView: {
     borderRadius: 20,
     marginRight: 14 * heightRef,
     overflow: 'hidden',
     elevation: 2,
     marginBottom: 5,
   },
-  title:{
-    fontSize: 16 * fontRef
+  title: {
+    fontSize: 16 * fontRef,
+  },
+  RestaurantImage: {
+    height: 70,
+    width: 70,
+    borderBottomLeftRadius: 12,
+    borderTopLeftRadius: 12,
+    borderTopRightRadius: 12
+  },
+  restaurantsList: {
+    backgroundColor: '#FFF',
+    marginHorizontal: 20 * heightRef,
+    marginVertical: 8 * heightRef,
+    paddingVertical: 17 * heightRef,
+    borderRadius: 20,
+    flexDirection:'row',
+    alignItems: 'center',
+    paddingHorizontal: 20 * heightRef
+  },
+  titleView:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginRight: 5 * heightRef,
+    marginBottom: 2 * heightRef
+  },
+  listContent:{
+    flex: 1,
+    marginLeft: 14 * heightRef
+  },
+  name:{
+    fontSize: 18 * fontRef,
+    color: '#121212',
+    fontWeight: '700'
+  },
+  ratings:{
+    color: 'grey',
+    fontSize: 16 * fontRef,
+    fontWeight: '500',
+    marginLeft: 5 * heightRef
   }
 });

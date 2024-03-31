@@ -1,10 +1,18 @@
 /* eslint-disable prettier/prettier */
-import {View, Text, Image, TextInput, FlatList, Pressable} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  TextInput,
+  FlatList,
+  Pressable,
+  ScrollView,
+} from 'react-native';
 import React from 'react';
 import {styles} from './style';
-import {Colors, Images} from './assets';
+import {Colors, Images, Restaurants} from './assets';
 import Icon, {IconType} from 'react-native-dynamic-vector-icons';
-import { heightRef } from '../../../Config/screenSizes';
+import {heightRef} from '../../../Config/screenSizes';
 
 const foods = [
   {
@@ -34,6 +42,27 @@ const foods = [
   },
 ];
 
+const RestaurantsList = [
+  {
+    name: 'Marks Kitchen',
+    location: 'Gulberg, Lahore Pakistan',
+    image: Restaurants.Restaurant1,
+    Ratings: '4.7',
+  },
+  {
+    name: 'Avari Express',
+    location: 'Mall Road, Lahore Pakistan',
+    image: Restaurants.Restaurant2,
+    Ratings: '4.5',
+  },
+  {
+    name: 'Haveli Restaurant',
+    location: 'Food Street, Lahore Pakistan',
+    image: Restaurants.Restaurant3,
+    Ratings: '4.7',
+  },
+];
+
 const FoodList = () => {
   return (
     <View style={styles.main}>
@@ -60,41 +89,75 @@ const FoodList = () => {
           <Image style={styles.filterIcon} source={Images.Filter} />
         </View>
       </View>
-      <View style={{marginBottom: 20* heightRef}}>
-      <FlatList
-        data={foods}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={{marginRight: 20, marginLeft: 20}}
-        renderItem={({item, index}) => (
-          <Pressable style={[styles.foods ]}>
-            <Text style={styles.title}>{item.title}</Text>
-          </Pressable>
-        )}
-      />
+      <View style={{marginBottom: 20 * heightRef}}>
+        <FlatList
+          data={foods}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{marginRight: 20, marginLeft: 20}}
+          renderItem={({item, index}) => (
+            <Pressable style={[styles.foods]}>
+              <Text style={styles.title}>{item.title}</Text>
+            </Pressable>
+          )}
+        />
       </View>
       <View style={styles.popularFoods}>
-      <Text style={styles.popular}>Popular foods</Text>
-      <Text style={styles.seeAll}>See All</Text>
+        <Text style={styles.popular}>Popular foods</Text>
+        <Text style={styles.seeAll}>See All</Text>
       </View>
       <View style={{marginBottom: 15 * heightRef}}>
         <FlatList
-        data={foods}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle ={{marginHorizontal: 20 * heightRef}}
-        
-        renderItem={({item})=> 
-        <View style={styles.imageView}>
-        <Image style={styles.foodImage} source={item.image}/>
-        </View>
-        }
+          data={foods}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{marginHorizontal: 20 * heightRef}}
+          renderItem={({item}) => (
+            <View style={styles.imageView}>
+              <Image style={styles.foodImage} source={item.image} />
+            </View>
+          )}
         />
       </View>
       <View style={styles.restaurantsFoods}>
-      <Text style={styles.popular}>Restaurants</Text>
-      <Text style={styles.seeAll}>See All</Text>
+        <Text style={styles.popular}>Restaurants</Text>
+        <Text style={styles.seeAll}>See All</Text>
       </View>
+      {/* <ScrollVsiew> */}
+      <FlatList
+        showsVerticalScrollIndicator={false}
+        data={RestaurantsList}
+        // contentContainerStyle={{marginTop: 10}}
+        renderItem={({item}) => (
+          <View style={styles.restaurantsList}>
+            <Image style={styles.RestaurantImage} source={item.image} />
+            <View style={styles.listContent}>
+              <View style={styles.titleView}>
+                <Text style={styles.name}>{item.name}</Text>
+                <Icon
+                  name="cards-heart-outline"
+                  type={IconType.MaterialCommunityIcons}
+                  color={Colors.primaryLight}
+                  size={24}
+                />
+              </View>
+              <Text style={{color: 'grey', marginVertical: 2 * heightRef}}>
+                {item.location}
+              </Text>
+              <View style={{flexDirection: 'row', alignItems: 'center'}}>
+              <Icon
+                  name="star"
+                  type={IconType.MaterialIcons}
+                  color={Colors.primaryLight}
+                  size={16}
+                />
+              <Text style={styles.ratings}>Rating: {item.Ratings}</Text>
+              </View>
+            </View>
+          </View>
+        )}
+      />
+      {/* </ScrollView> */}
     </View>
   );
 };
