@@ -14,6 +14,7 @@ export const Images = {
   BeefBurger: require('../../../Assets/Images/BeefBurger.jpg'),
   Pasta: require('../../../Assets/Images/pasta.jpg'),
   ZingerBurger: require('../../../Assets/Images/zinger.jpg'),
+  Mix: require('../../../Assets/Images/mix.jpg'),
 };
 
 export const Restaurants = {

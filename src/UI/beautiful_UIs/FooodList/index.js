@@ -18,11 +18,13 @@ const foods = [
   {
     id: 1,
     title: 'All',
-    image: Images.BeefBurger,
+    foodName: "All",
+    image: Images.Mix,
   },
   {
     id: 2,
     title: 'Burger',
+    foodName: "All",
     image: Images.pizza2,
   },
   {
