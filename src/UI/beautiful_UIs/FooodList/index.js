@@ -8,7 +8,7 @@ import {
   Pressable,
   ScrollView,
 } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import {styles} from './style';
 import {Colors, Images, Restaurants} from './assets';
 import Icon, {IconType} from 'react-native-dynamic-vector-icons';
@@ -18,29 +18,62 @@ const foods = [
   {
     id: 1,
     title: 'All',
-    foodName: "All",
+    foodName: 'All',
     image: Images.Mix,
+    RestaurantDetail: {
+      name: 'Marks Kitchen',
+      location: 'Gulberg, Lahore Pakistan',
+      image: Restaurants.Restaurant1,
+      Ratings: '4.7',
+    },
   },
   {
     id: 2,
-    title: 'Burger',
-    foodName: "All",
-    image: Images.pizza2,
+    title: 'Burgers',
+    foodName: 'Beef Burger',
+    image: Images.BeefBurger,
+    RestaurantDetail: {
+      name: 'Marks Kitchen',
+      location: 'Gulberg, Lahore Pakistan',
+      image: Restaurants.Restaurant1,
+      Ratings: '4.7',
+    },
   },
   {
     id: 3,
     title: 'Pasta',
+    foodName: 'Pasta',
     image: Images.Pasta,
+    RestaurantDetail: {
+      name: 'Haveli Restaurant',
+      location: 'Food Street, Lahore Pakistan',
+      image: Restaurants.Restaurant3,
+      Ratings: '4.7',
+    },
   },
   {
     id: 4,
     title: 'Pizza',
-    image: Images.ZingerBurger,
+    foodName: 'Crown Crust Pizza',
+    image: Images.pizza2,
+    RestaurantDetail: {
+      name: 'Cheezious',
+      location: 'Johar Town, Lahore Pakistan',
+      image: Restaurants.Restaurant4,
+      Ratings: '4.8',
+    },
   },
   {
     id: 5,
     title: 'Starters',
-    image: Images.pizza,
+    foodName: 'Starters',
+    image: Images.Starter,
+    RestaurantDetail: {
+      name: 'Avari Express',
+      location: 'Mall Road, Lahore Pakistan',
+      image: Restaurants.Restaurant2,
+      Ratings: '4.5',
+    },
   },
 ];
 
@@ -66,6 +99,9 @@ const RestaurantsList = [
 ];
 
 const FoodList = () => {
+
+const [Favourite, setFavourite] =useState(false)
+
   return (
     <View style={styles.main}>
       <View style={styles.header}>
@@ -79,13 +115,13 @@ const FoodList = () => {
         <TextInput
           style={styles.search}
           placeholder="Search Foods"
-          placeholderTextColor={Colors.grey}>
-          <Icon
+          placeholderTextColor="grey">
+          {/* <Icon
             name="search"
             type={IconType.Ionicons}
             size={20}
             color={Colors.primaryColor}
-          />
+          /> */}
         </TextInput>
         <View style={styles.filter}>
           <Image style={styles.filterIcon} source={Images.Filter} />
@@ -130,30 +166,31 @@ const FoodList = () => {
         showsVerticalScrollIndicator={false}
         data={RestaurantsList}
         // contentContainerStyle={{marginTop: 10}}
-        renderItem={({item}) => (
+        renderItem={({item, index}) => (
           <View style={styles.restaurantsList}>
             <Image style={styles.RestaurantImage} source={item.image} />
             <View style={styles.listContent}>
               <View style={styles.titleView}>
                 <Text style={styles.name}>{item.name}</Text>
                 <Icon
-                  name="cards-heart-outline"
+                  name= {Favourite ? "cards-heart" : "cards-heart-outline"} 
                   type={IconType.MaterialCommunityIcons}
                   color={Colors.primaryLight}
                   size={24}
+                  onPress={()=> setFavourite(!Favourite)}
                 />
               </View>
               <Text style={{color: 'grey', marginVertical: 2 * heightRef}}>
                 {item.location}
               </Text>
               <View style={{flexDirection: 'row', alignItems: 'center'}}>
-              <Icon
+                <Icon
                   name="star"
                   type={IconType.MaterialIcons}
                   color={Colors.primaryLight}
                   size={16}
                 />
-              <Text style={styles.ratings}>Rating: {item.Ratings}</Text>
+                <Text style={styles.ratings}>Rating: {item.Ratings}</Text>
               </View>
             </View>
           </View>

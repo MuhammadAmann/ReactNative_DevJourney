@@ -15,12 +15,14 @@ export const Images = {
   Pasta: require('../../../Assets/Images/pasta.jpg'),
   ZingerBurger: require('../../../Assets/Images/zinger.jpg'),
   Mix: require('../../../Assets/Images/mix.jpg'),
+  Starter: require('../../../Assets/Images/starter.jpg'),
 };
 
 export const Restaurants = {
   Restaurant1: require('../../../Assets/Images/R1.jpg'),
   Restaurant2: require('../../../Assets/Images/R2.jpg'),
   Restaurant3: require('../../../Assets/Images/R3.jpg'),
+  Restaurant4: require('../../../Assets/Images/R4.png'),
   RatingStar: require('../../../Assets/Images/star.png'),
   
 };
