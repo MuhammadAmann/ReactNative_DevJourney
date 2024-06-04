@@ -8,11 +8,12 @@ import {
   Pressable,
   ScrollView,
 } from 'react-native';
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {styles} from './style';
 import {Colors, Images, Restaurants} from './assets';
 import Icon, {IconType} from 'react-native-dynamic-vector-icons';
 import {heightRef} from '../../../Config/screenSizes';
+import HeaderComponens from '../../../Components/header';
 
 const foods = [
   {
@@ -99,11 +100,11 @@ const RestaurantsList = [
 ];
 
 const FoodList = () => {
-
-const [Favourite, setFavourite] =useState(false)
+  const [Favourite, setFavourite] = useState(false);
 
   return (
     <View style={styles.main}>
+      <HeaderComponens />
       <View style={styles.header}>
         <Text style={styles.headetText1}>
           Hello
@@ -114,7 +115,7 @@ const [Favourite, setFavourite] =useState(false)
       <View style={styles.searchBar}>
         <TextInput
           style={styles.search}
-          placeholder="Search Foods"
+          placeholder="Search your foods.."
           placeholderTextColor="grey">
           {/* <Icon
             name="search"
@@ -173,11 +174,11 @@ const [Favourite, setFavourite] =useState(false)
               <View style={styles.titleView}>
                 <Text style={styles.name}>{item.name}</Text>
                 <Icon
-                  name= {Favourite ? "cards-heart" : "cards-heart-outline"} 
+                  name={Favourite ? 'cards-heart' : 'cards-heart-outline'}
                   type={IconType.MaterialCommunityIcons}
                   color={Colors.primaryLight}
                   size={24}
-                  onPress={()=> setFavourite(!Favourite)}
+                  onPress={() => setFavourite(!Favourite)}
                 />
               </View>
               <Text style={{color: 'grey', marginVertical: 2 * heightRef}}>

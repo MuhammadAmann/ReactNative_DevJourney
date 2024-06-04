@@ -13,6 +13,10 @@ import {styles} from './style';
 import Assets from '../../Assets';
 import Icon, {IconType} from 'react-native-dynamic-vector-icons';
 import {AppColors} from '../../Assets/AppColors';
+import {
+  SafeAreaProvider,
+  useSafeAreaInsets,
+} from 'react-native-safe-area-context';
 
 const componentList = [
   {
@@ -34,8 +38,9 @@ const componentList = [
 ];
 
 const HomeScreen = ({navigation}) => {
+  const insets = useSafeAreaInsets();
   return (
-    <View style={styles.main}>
+    <View style={[styles.main, {paddingTop: insets.top}]}>
       <View style={styles.top}>
         <Image style={styles.rnImage} source={Assets.ReactNative} />
         <Text style={styles.ReactNative}>React Native - Dev Journey </Text>
