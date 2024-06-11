@@ -11,6 +11,7 @@ import Beautiful_UIs from '../UI/beautiful_UIs';
 import LearningMaterial from '../UI/Learning_Material';
 import PressAbleButtons from '../UI/Learning_Material/PressableButtons';
 import FoodList from '../UI/beautiful_UIs/FooodList';
+import ItemDetailScreen from '../UI/beautiful_UIs/FooodList/DetailScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -27,6 +28,7 @@ const StackNavigations = ({}) => {
       <Stack.Screen name="LearningMaterial" component={LearningMaterial} />
       <Stack.Screen name="PressAbleButtons" component={PressAbleButtons} />
       <Stack.Screen name="FoodList" component={FoodList} />
+      <Stack.Screen name="ItemDetailScreen" component={ItemDetailScreen} />
     </Stack.Navigator>
   );
 };

@@ -57,7 +57,6 @@ export const styles = StyleSheet.create({
     width: 30 * heightRef,
   },
   foods: {
-    backgroundColor: '#fff',
     height: 40,
     paddingHorizontal: 24 * heightRef,
     alignItems: 'center',
@@ -115,7 +114,7 @@ export const styles = StyleSheet.create({
     width: 70,
     borderBottomLeftRadius: 12,
     borderTopLeftRadius: 12,
-    borderTopRightRadius: 12
+    borderTopRightRadius: 12,
   },
   restaurantsList: {
     backgroundColor: '#FFF',
@@ -123,30 +122,30 @@ export const styles = StyleSheet.create({
     marginVertical: 8 * heightRef,
     paddingVertical: 17 * heightRef,
     borderRadius: 20,
-    flexDirection:'row',
+    flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 20 * heightRef
+    paddingHorizontal: 20 * heightRef,
   },
-  titleView:{
+  titleView: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     marginRight: 5 * heightRef,
-    marginBottom: 2 * heightRef
+    marginBottom: 2 * heightRef,
   },
-  listContent:{
+  listContent: {
     flex: 1,
-    marginLeft: 14 * heightRef
+    marginLeft: 14 * heightRef,
   },
-  name:{
+  name: {
     fontSize: 18 * fontRef,
     color: '#121212',
-    fontWeight: '700'
+    fontWeight: '700',
   },
-  ratings:{
+  ratings: {
     color: 'grey',
     fontSize: 16 * fontRef,
     fontWeight: '500',
-    marginLeft: 5 * heightRef
-  }
+    marginLeft: 5 * heightRef,
+  },
 });

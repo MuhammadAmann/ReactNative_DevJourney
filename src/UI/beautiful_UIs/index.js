@@ -1,10 +1,18 @@
 /* eslint-disable prettier/prettier */
-import {View, Text, Image, FlatList, TouchableOpacity, Pressable} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  FlatList,
+  TouchableOpacity,
+  Pressable,
+} from 'react-native';
 import React from 'react';
-import { styles } from './style';
+import {styles} from './style';
 import Assets from '../../Assets';
-import Icon, { IconType } from 'react-native-dynamic-vector-icons';
-import { AppColors } from '../../Assets/AppColors';
+import Icon, {IconType} from 'react-native-dynamic-vector-icons';
+import {AppColors} from '../../Assets/AppColors';
+import HeaderComponent from '../../Components/header';
 
 const componentList = [
   {
@@ -12,14 +20,14 @@ const componentList = [
     navigationName: 'FoodList',
     image: Assets.FoodList,
   },
-  
-  ];
+];
 const Beautiful_UIs = ({navigation}) => {
   return (
     <View style={styles.main}>
+      <HeaderComponent />
       <View style={styles.header}>
         <View style={styles.headerRight}>
-          <Pressable onPress={() => navigation.goBack()} >
+          <Pressable onPress={() => navigation.goBack()}>
             <Icon
               name="chevron-left"
               type={IconType.FontAwesome5}
@@ -29,11 +37,11 @@ const Beautiful_UIs = ({navigation}) => {
           </Pressable>
           <Text style={styles.headerTitle}>Welcome </Text>
           <Icon
-              name="waving-hand"
-              type={IconType.MaterialIcons}
-              size={16}
-              color= '#e6bc98'
-            />
+            name="waving-hand"
+            type={IconType.MaterialIcons}
+            size={16}
+            color="#e6bc98"
+          />
         </View>
         <Image source={Assets.Dev_Inventive} style={styles.Dev_Inventive} />
       </View>
@@ -42,7 +50,7 @@ const Beautiful_UIs = ({navigation}) => {
         style={styles.componentList}
         data={componentList}
         showsHorizontalScrollIndicator={false}
-        showsVerticalScrollIndicator = {false}
+        showsVerticalScrollIndicator={false}
         numColumns={2}
         renderItem={({item}) => (
           <View>
