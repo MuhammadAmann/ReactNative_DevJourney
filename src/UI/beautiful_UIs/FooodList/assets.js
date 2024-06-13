@@ -4,6 +4,7 @@ export const Colors = {
   primaryLight: '#ebaf81',
   blacklightColor: '#484034',
   background: '#eaeaee',
+  grayColor: '#C4C4C4',
 };
 
 export const Images = {
@@ -24,5 +25,4 @@ export const Restaurants = {
   Restaurant3: require('../../../Assets/Images/R3.jpg'),
   Restaurant4: require('../../../Assets/Images/R4.png'),
   RatingStar: require('../../../Assets/Images/star.png'),
-  
 };

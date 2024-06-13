@@ -20,8 +20,9 @@ const foods = [
   {
     id: 1,
     title: 'All',
-    foodName: 'All',
+    foodName: 'Platter',
     image: Images.Mix,
+    price: 50,
     RestaurantDetail: {
       name: 'Marks Kitchen',
       location: 'Gulberg, Lahore Pakistan',
@@ -34,6 +35,7 @@ const foods = [
     title: 'Burgers',
     foodName: 'Beef Burger',
     image: Images.BeefBurger,
+    price: 5,
     RestaurantDetail: {
       name: 'Marks Kitchen',
       location: 'Gulberg, Lahore Pakistan',
@@ -46,6 +48,7 @@ const foods = [
     title: 'Pasta',
     foodName: 'Pasta',
     image: Images.Pasta,
+    price: 8,
     RestaurantDetail: {
       name: 'Haveli Restaurant',
       location: 'Food Street, Lahore Pakistan',
@@ -58,6 +61,7 @@ const foods = [
     title: 'Pizza',
     foodName: 'Crown Crust Pizza',
     image: Images.pizza2,
+    price: 12,
     RestaurantDetail: {
       name: 'Cheezious',
       location: 'Johar Town, Lahore Pakistan',
@@ -70,6 +74,7 @@ const foods = [
     title: 'Starters',
     foodName: 'Starters',
     image: Images.Starter,
+    price: 5,
     RestaurantDetail: {
       name: 'Avari Express',
       location: 'Mall Road, Lahore Pakistan',
@@ -119,6 +124,14 @@ const FoodList = ({navigation}) => {
     <View style={styles.main}>
       <HeaderComponens />
       <View style={styles.header}>
+        <Pressable onPress={() => navigation.goBack()}>
+          <Icon
+            name="chevron-left"
+            type={IconType.FontAwesome5}
+            size={20}
+            color={Colors.blacklightColor}
+          />
+        </Pressable>
         <Text style={styles.headetText1}>
           Hello
           <Text style={styles.headetText2}> Rocky</Text>
@@ -196,7 +209,9 @@ const FoodList = ({navigation}) => {
             renderItem={({item}) => {
               return (
                 <Pressable
-                  onPress={() => navigation.navigate('ItemDetailScreen')}
+                  onPress={() =>
+                    navigation.navigate('ItemDetailScreen', {item})
+                  }
                   style={styles.imageView}>
                   <Image style={styles.foodImage} source={item.image} />
                 </Pressable>
