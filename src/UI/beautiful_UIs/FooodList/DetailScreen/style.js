@@ -111,6 +111,9 @@ export const styles = StyleSheet.create({
     marginVertical: 20,
     // backgroundColor: 'red',
   },
+  sizePrice: {
+    fontSize: 12 * fontRef,
+  },
   countView: {
     flexDirection: 'row',
     justifyContent: 'space-between',

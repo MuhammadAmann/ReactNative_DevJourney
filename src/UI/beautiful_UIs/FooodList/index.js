@@ -109,7 +109,7 @@ const RestaurantsList = [
 ];
 
 const FoodList = ({navigation}) => {
-  const [selectedType, setSelectedType] = useState(null);
+  const [selectedType, setSelectedType] = useState(foods[0].id);
   const [Favourite, setFavourite] = useState(null);
 
   const SelectType = id => {

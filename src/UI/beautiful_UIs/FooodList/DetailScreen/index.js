@@ -27,8 +27,16 @@ const sizes = [
   },
 ];
 
+// Important Notes
+// Original price with addition of smalll, medium, larger price will calculate when press Buy Now button
+// also show the size wise proce when select the size, show a small size proce uder the size latter
+// show a popup when user buy the food with an animation(now apply animation on it)
+
 const ItemDetailScreen = ({navigation, route}) => {
-  const [size, setSize] = useState('');
+  const [size, setSize] = useState(sizes[1].id);
+  const [item, setItem] = useState(true); // true means show Food image, and false to show restaurant image
+  const [count, setCount] = useState(0);
+
   const foodDetail = route.params.item;
   console.log('Food Detail: ', JSON.stringify(foodDetail, null, 2));
 
@@ -40,6 +48,17 @@ const ItemDetailScreen = ({navigation, route}) => {
 
   const selectSize = id => {
     setSize(id);
+  };
+
+  const increment = () => {
+    setCount(count + 1);
+    console.log(count);
+  };
+  const decrement = () => {
+    if (count > 0) {
+      setCount(count - 1);
+      console.log(count);
+    }
   };
 
   return (
@@ -64,15 +83,22 @@ const ItemDetailScreen = ({navigation, route}) => {
         </Pressable>
       </View>
       <View style={styles.body}>
-        <Text style={styles.heading}>{foodDetail.foodName}</Text>
-        <Text style={styles.description}>
-          Description of burger here, this is the random detail of Lahore
-          restaurants, Description of burger here, is the random detail of
-          Lahore restaurants
+        <Text style={styles.heading}>
+          {item ? foodDetail.foodName : restaurantsDetail.name}
         </Text>
-        <View style={styles.imageBackView}>
-          <Image style={styles.imageStyle} source={foodDetail.image} />
-        </View>
+        <Text style={styles.description}>
+          Description for Food here, this is the random detail of Lahore
+          restaurants, Description of food here, is the random detail of Lahore
+          restaurants
+        </Text>
+        <TouchableOpacity
+          onPress={() => setItem(!item)}
+          style={styles.imageBackView}>
+          <Image
+            style={styles.imageStyle}
+            source={item ? foodDetail.image : restaurantsDetail.image}
+          />
+        </TouchableOpacity>
 
         <View style={styles.itemSizes}>
           {sizes.map(item => {
@@ -95,6 +121,13 @@ const ItemDetailScreen = ({navigation, route}) => {
                   ]}>
                   {item.Title}
                 </Text>
+                <Text
+                  style={[
+                    styles.sizePrice,
+                    {color: size === id ? '#fff' : Colors.grayColor},
+                  ]}>
+                  ${item.price}
+                </Text>
               </Pressable>
             );
           })}
@@ -106,11 +139,11 @@ const ItemDetailScreen = ({navigation, route}) => {
           <Text style={styles.Rs}>{foodDetail.price} $</Text>
         </View>
         <View style={styles.countView}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={decrement}>
             <Text style={styles.count}>-</Text>
           </TouchableOpacity>
-          <Text style={styles.itemCount}>1</Text>
-          <TouchableOpacity>
+          <Text style={styles.itemCount}>{count}</Text>
+          <TouchableOpacity onPress={increment}>
             <Text style={styles.count}>+</Text>
           </TouchableOpacity>
         </View>
