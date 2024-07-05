@@ -136,7 +136,7 @@ const ItemDetailScreen = ({navigation, route}) => {
       <View style={styles.priceView}>
         <View>
           <Text style={styles.price}>Price</Text>
-          <Text style={styles.Rs}>{foodDetail.price} $</Text>
+          <Text style={styles.Rs}>{foodDetail.price * count} $</Text>
         </View>
         <View style={styles.countView}>
           <TouchableOpacity onPress={decrement}>
