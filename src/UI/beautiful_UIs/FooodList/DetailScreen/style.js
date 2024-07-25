@@ -78,7 +78,6 @@ export const styles = StyleSheet.create({
     shadowRadius: 4.65,
   },
   itemSizes: {
-    // backgroundColor: 'red',
     width: '60%',
     flexDirection: 'row',
     alignItems: 'center',
@@ -120,7 +119,6 @@ export const styles = StyleSheet.create({
     width: '100%',
     paddingHorizontal: 20,
     marginVertical: 20,
-    // backgroundColor: 'red',
   },
   sizePrice: {
     fontSize: 12 * fontRef,

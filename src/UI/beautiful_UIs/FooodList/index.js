@@ -142,14 +142,7 @@ const FoodList = ({navigation}) => {
         <TextInput
           style={styles.search}
           placeholder="Search your foods.."
-          placeholderTextColor="grey">
-          {/* <Icon
-            name="search"
-            type={IconType.Ionicons}
-            size={20}
-            color={Colors.primaryColor}
-          /> */}
-        </TextInput>
+          placeholderTextColor="grey"></TextInput>
         <View style={styles.filter}>
           <Image style={styles.filterIcon} source={Images.Filter} />
         </View>
@@ -157,8 +150,6 @@ const FoodList = ({navigation}) => {
       <View
         style={{
           marginBottom: 20 * heightRef,
-          // backgroundColor: 'red',
-          // paddingHorizontal: 20,
         }}>
         <FlatList
           data={foods}
