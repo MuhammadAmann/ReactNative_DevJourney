@@ -14,6 +14,11 @@ import Icon, {IconType} from 'react-native-dynamic-vector-icons';
 import {AppColors} from '../../Assets/AppColors';
 import HeaderComponent from '../../Components/header';
 
+// Final Note :-----
+// Food list has been created with dummy data and design in Hard coded
+// It is basically a UI design  with basic functionalities(do not implement functionalities regarding to every scenario but basic and tricky somes have been applied) of Restautrant Items
+// Design Inspiration: Behance (Link: ----> https://www.behance.net/gallery/192831105/Restaurant-Mobile-App )
+
 const componentList = [
   {
     componentName: 'Food List',

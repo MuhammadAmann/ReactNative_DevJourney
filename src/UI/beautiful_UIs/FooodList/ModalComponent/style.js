@@ -8,7 +8,6 @@ export const styles = StyleSheet.create({
   modal: {
     flex: 1,
     alignItems: 'center',
-    // backgroundColor: 'yellow',
   },
   mainView: {
     backgroundColor: '#fff',
