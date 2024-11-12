@@ -35,7 +35,7 @@ export const styles = StyleSheet.create({
   componentList: {
     marginTop: 10 * heightRef,
     flexWrap: 'wrap',
-    paddingHorizontal: 20
+    paddingHorizontal: 20,
   },
   buttonStyles: {
     backgroundColor: '#FFF',
@@ -73,7 +73,6 @@ export const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    height: 80 * heightRef,
     marginHorizontal: 24,
     justifyContent: 'space-between',
   },
@@ -105,10 +104,11 @@ export const styles = StyleSheet.create({
     elevation: 4,
     padding: 10,
   },
-  learning:{
+  learning: {
     fontSize: 24,
     fontWeight: '700',
     color: '#121212',
-    textAlign:'center'
-  }
+    textAlign: 'center',
+    marginTop: 10 * heightRef,
+  },
 });

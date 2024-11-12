@@ -12,6 +12,7 @@ import Icon, {IconType} from 'react-native-dynamic-vector-icons';
 import {AppColors} from '../../Assets/AppColors';
 import {styles} from './style';
 import Assets from '../../Assets';
+import HeaderComponent from '../../Components/header/index.js';
 
 const componentList = [
   {
@@ -23,9 +24,10 @@ const componentList = [
 const LearningMaterial = ({navigation}) => {
   return (
     <View style={styles.main}>
+      <HeaderComponent />
       <View style={styles.header}>
         <View style={styles.headerRight}>
-          <Pressable onPress={() => navigation.goBack()} >
+          <Pressable onPress={() => navigation.goBack()}>
             <Icon
               name="chevron-left"
               type={IconType.FontAwesome5}
@@ -35,11 +37,11 @@ const LearningMaterial = ({navigation}) => {
           </Pressable>
           <Text style={styles.headerTitle}>Welcome </Text>
           <Icon
-              name="waving-hand"
-              type={IconType.MaterialIcons}
-              size={16}
-              color= '#e6bc98'
-            />
+            name="waving-hand"
+            type={IconType.MaterialIcons}
+            size={16}
+            color="#e6bc98"
+          />
         </View>
         <Image source={Assets.Dev_Inventive} style={styles.Dev_Inventive} />
       </View>
@@ -48,7 +50,7 @@ const LearningMaterial = ({navigation}) => {
         style={styles.componentList}
         data={componentList}
         showsHorizontalScrollIndicator={false}
-        showsVerticalScrollIndicator = {false}
+        showsVerticalScrollIndicator={false}
         numColumns={2}
         renderItem={({item}) => (
           <View>
