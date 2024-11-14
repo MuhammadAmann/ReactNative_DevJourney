@@ -68,7 +68,6 @@ const ItemDetailScreen = ({navigation, route}) => {
 
   return (
     <View style={styles.main}>
-      <HeaderComponent />
       <View style={styles.header}>
         <Pressable onPress={() => navigation.goBack()}>
           <Icon

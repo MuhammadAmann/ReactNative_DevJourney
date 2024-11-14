@@ -16,15 +16,14 @@ import HeaderComponent from '../../Components/header/index.js';
 
 const componentList = [
   {
-    componentName: 'PressAble Buttons',
-    navigationName: 'PressAbleButtons',
+    componentName: 'Counter',
+    navigationName: 'Counter',
     image: Assets.Buttons,
   },
 ];
 const LearningMaterial = ({navigation}) => {
   return (
     <View style={styles.main}>
-      <HeaderComponent />
       <View style={styles.header}>
         <View style={styles.headerRight}>
           <Pressable onPress={() => navigation.goBack()}>

@@ -1,8 +1,9 @@
 /* eslint-disable prettier/prettier */
 import {View, Text} from 'react-native';
 import React from 'react';
+import HeaderComponent from '../../../Components/header';
 
-const PressAbleButtons = () => {
+const Counter = () => {
   return (
     <View>
       <Text>PressAble Buttons</Text>
@@ -10,4 +11,4 @@ const PressAbleButtons = () => {
   );
 };
 
-export default PressAbleButtons;
+export default Counter;

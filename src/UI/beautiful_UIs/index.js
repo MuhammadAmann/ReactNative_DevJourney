@@ -29,7 +29,6 @@ const componentList = [
 const Beautiful_UIs = ({navigation}) => {
   return (
     <View style={styles.main}>
-      <HeaderComponent />
       <View style={styles.header}>
         <View style={styles.headerRight}>
           <Pressable onPress={() => navigation.goBack()}>

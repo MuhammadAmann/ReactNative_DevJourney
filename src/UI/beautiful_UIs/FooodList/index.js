@@ -13,8 +13,8 @@ import {styles} from './style';
 import {Colors, Images, Restaurants} from './assets';
 import Icon, {IconType} from 'react-native-dynamic-vector-icons';
 import {heightRef} from '../../../Config/screenSizes';
-import HeaderComponens from '../../../Components/header';
-import {AppColors} from '../../../Assets/AppColors';
+import {addFav, removefav} from '../../../Redux/Features/FavouriteRestaurant';
+import {useDispatch} from 'react-redux';
 
 const foods = [
   {
@@ -86,21 +86,21 @@ const foods = [
 
 const RestaurantsList = [
   {
-    id: 1,
+    id: 4,
     name: 'Marks Kitchen',
     location: 'Gulberg, Lahore Pakistan',
     image: Restaurants.Restaurant1,
     Ratings: '4.7',
   },
   {
-    id: 2,
+    id: 5,
     name: 'Avari Express',
     location: 'Mall Road, Lahore Pakistan',
     image: Restaurants.Restaurant2,
     Ratings: '4.5',
   },
   {
-    id: 3,
+    id: 6,
     name: 'Haveli Restaurant',
     location: 'Food Street, Lahore Pakistan',
     image: Restaurants.Restaurant3,
@@ -111,6 +111,7 @@ const RestaurantsList = [
 const FoodList = ({navigation}) => {
   const [selectedType, setSelectedType] = useState(foods[0].id);
   const [Favourite, setFavourite] = useState(null);
+  const dispatch = useDispatch();
 
   const SelectType = id => {
     setSelectedType(id);
@@ -120,9 +121,17 @@ const FoodList = ({navigation}) => {
     setFavourite(id);
   };
 
+  const addItemFavourite = item => {
+    dispatch(addFav(item));
+    console.log('item add: ', JSON.stringify(item, null, 3));
+  };
+  const removeItemFavourite = item => {
+    dispatch(removefav(item));
+    console.log('item removed: ', JSON.stringify(item, null, 3));
+  };
+
   return (
     <View style={styles.main}>
-      <HeaderComponens />
       <View style={styles.header}>
         <Pressable onPress={() => navigation.goBack()}>
           <Icon
@@ -144,7 +153,14 @@ const FoodList = ({navigation}) => {
           placeholder="Search your foods.."
           placeholderTextColor="grey"></TextInput>
         <View style={styles.filter}>
-          <Image style={styles.filterIcon} source={Images.Filter} />
+          {/* <Image style={styles.filterIcon} source={Images.Filter} /> */}
+          <Icon
+            name={'cards-heart'}
+            type={IconType.MaterialCommunityIcons}
+            color={'red'}
+            size={30}
+            onPress={() => navigation.navigate('FavouriteFoods')}
+          />
         </View>
       </View>
       <View
@@ -233,7 +249,12 @@ const FoodList = ({navigation}) => {
                       type={IconType.MaterialCommunityIcons}
                       color={Colors.primaryLight}
                       size={24}
-                      onPress={() => FavouriteItem(id)}
+                      onPress={() => {
+                        FavouriteItem(id),
+                          Favourite === id
+                            ? removeItemFavourite(item)
+                            : addItemFavourite(item);
+                      }}
                     />
                   </View>
                   <Text style={{color: 'grey', marginVertical: 2 * heightRef}}>

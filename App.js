@@ -1,23 +1,30 @@
 /* eslint-disable prettier/prettier */
-import {View, Text} from 'react-native';
 import React from 'react';
-import HomeScreen from './src/UI/Home';
 import {NavigationContainer} from '@react-navigation/native';
 import StackNavigations from './src/Navigations';
 import {LogBox} from 'react-native';
-import {store} from 'src/Redux/store';
+
 import {Provider} from 'react-redux';
+import {persistor, store} from './src/Redux/store';
+import {PersistGate} from 'redux-persist/integration/react';
+import HeaderComponent from './src/Components/header';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 LogBox.ignoreLogs(['Warning: ...']);
 
 LogBox.ignoreAllLogs();
 const App = () => {
   return (
-    // <Provider store={store}>
-    <NavigationContainer>
-      <StackNavigations />
-    </NavigationContainer>
-    // </Provider>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <SafeAreaProvider>
+          <HeaderComponent />
+          <NavigationContainer>
+            <StackNavigations />
+          </NavigationContainer>
+        </SafeAreaProvider>
+      </PersistGate>
+    </Provider>
   );
 };
 

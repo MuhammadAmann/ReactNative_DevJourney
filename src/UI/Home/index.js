@@ -40,7 +40,7 @@ const componentList = [
 const HomeScreen = ({navigation}) => {
   const insets = useSafeAreaInsets();
   return (
-    <View style={[styles.main, {paddingTop: insets.top}]}>
+    <View style={styles.main}>
       <View style={styles.top}>
         <Image style={styles.rnImage} source={Assets.ReactNative} />
         <Text style={styles.ReactNative}>React Native - Dev Journey </Text>

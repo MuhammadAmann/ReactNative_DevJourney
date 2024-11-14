@@ -11,9 +11,9 @@
     "noEmit": true,
     "strict": true,
     "target": "esnext",
-    "baseUrl": ".",
-    "paths": {
-      "src/*": ["ProjectName/src/*"]
-    }
+    // "baseUrl": ".",
+    // "paths": {
+    //   "src/*": ["ProjectName/src/*"]
+    // }
   }
 }
