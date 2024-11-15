@@ -15,7 +15,7 @@ export const FavouriteFoods = ({navigation}) => {
   const [update, setUpdate] = useState();
   const dispatch = useDispatch();
 
-  const removeItemFavourite = (id, item) => {
+  const removeItemFavourite = (id: number, item: any) => {
     dispatch(removefav(id));
     console.log('item removed: ', JSON.stringify(item, null, 3));
     setUpdate;
