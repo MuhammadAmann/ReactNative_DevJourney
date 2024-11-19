@@ -1,5 +1,4 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import counterReducer from './Features/counterSlice'
 import FavouriteItemReducer from '../Redux/Features/FavouriteRestaurant'
 import { FLUSH, PAUSE, PERSIST, persistReducer, persistStore, PURGE, REGISTER, REHYDRATE } from 'redux-persist';
 import { reduxStorage } from '../Services/Storage';
@@ -10,7 +9,6 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
-  counter: counterReducer,
   FavouriteItemReducer
 }) 
 
