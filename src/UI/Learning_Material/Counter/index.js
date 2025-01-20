@@ -3,10 +3,10 @@ import {View, Text} from 'react-native';
 import React from 'react';
 import HeaderComponent from '../../../Components/header';
 
-const Counter = () => {
+const Counter = ({navigation}) => {
   return (
     <View>
-      <Text>PressAble Buttons</Text>
+      <Text onPress={() => navigation.goBack()}>PressAble Buttons</Text>
     </View>
   );
 };

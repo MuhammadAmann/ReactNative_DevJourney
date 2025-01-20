@@ -28,6 +28,7 @@ end
 target 'ReactNative_DevJourney' do
   config = use_native_modules!
 
+  use_flipper!({ 'Flipper' => '0.273.0' })
   use_react_native!(
     :path => config[:reactNativePath],
     # Enables Flipper.
