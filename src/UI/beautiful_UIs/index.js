@@ -25,6 +25,11 @@ const componentList = [
     navigationName: 'FoodList',
     image: Assets.FoodList,
   },
+  {
+    componentName: 'Animations',
+    navigationName: 'Animations',
+    image: Assets.Animations,
+  },
 ];
 const Beautiful_UIs = ({navigation}) => {
   return (

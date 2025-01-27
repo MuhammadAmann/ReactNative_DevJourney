@@ -1119,25 +1119,25 @@ PODS:
     - React-jsi (= 0.73.5)
     - React-logger (= 0.73.5)
     - React-perflogger (= 0.73.5)
-  - RNReanimated (3.16.1):
+  - RNReanimated (3.16.7):
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
     - ReactCommon/turbomodule/core
-    - RNReanimated/reanimated (= 3.16.1)
-    - RNReanimated/worklets (= 3.16.1)
-  - RNReanimated/reanimated (3.16.1):
+    - RNReanimated/reanimated (= 3.16.7)
+    - RNReanimated/worklets (= 3.16.7)
+  - RNReanimated/reanimated (3.16.7):
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
     - ReactCommon/turbomodule/core
-    - RNReanimated/reanimated/apple (= 3.16.1)
-  - RNReanimated/reanimated/apple (3.16.1):
+    - RNReanimated/reanimated/apple (= 3.16.7)
+  - RNReanimated/reanimated/apple (3.16.7):
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
     - ReactCommon/turbomodule/core
-  - RNReanimated/worklets (3.16.1):
+  - RNReanimated/worklets (3.16.7):
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
@@ -1424,12 +1424,12 @@ SPEC CHECKSUMS:
   React-runtimescheduler: 814b644a5f456c7df1fba7bcd9914707152527c6
   React-utils: 987a4526a2fc0acdfaf87888adfe0bf9d0452066
   ReactCommon: 2947b0bffd82ea0e58ca7928881152d4c6dae9af
-  RNReanimated: 51ba6c9ecdde77caf364c7e5ae59a089c7dd98b3
+  RNReanimated: c076386897b52fb541afa8fffe08ded731d50211
   RNScreens: 17e2f657f1b09a71ec3c821368a04acbb7ebcb46
   RNVectorIcons: 73ab573085f65a572d3b6233e68996d4707fd505
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: a716eea57d0d3430219c0a5a233e1e93ee931eb7
 
-PODFILE CHECKSUM: b5587ef667248f4253950fe0b41d2ab38fef5d32
+PODFILE CHECKSUM: 2322198f7eb6e7a2aa56c06fc1683d37710fc398
 
 COCOAPODS: 1.16.2

@@ -14,6 +14,9 @@ import FoodList from '../UI/beautiful_UIs/FooodList';
 import ItemDetailScreen from '../UI/beautiful_UIs/FooodList/DetailScreen';
 import Counter from '../UI/Learning_Material/Counter';
 import {FavouriteFoods} from '../UI/beautiful_UIs/FooodList/FavouriteFoods';
+import {Animations} from '../UI/beautiful_UIs/Animations';
+import One from '../UI/beautiful_UIs/Animations/Interpolation/one';
+import {Basic} from '../UI/beautiful_UIs/Animations/Interpolation/basic';
 
 const Stack = createNativeStackNavigator();
 
@@ -32,6 +35,9 @@ const StackNavigations = ({}) => {
       <Stack.Screen name="FoodList" component={FoodList} />
       <Stack.Screen name="ItemDetailScreen" component={ItemDetailScreen} />
       <Stack.Screen name="FavouriteFoods" component={FavouriteFoods} />
+      <Stack.Screen name="Animations" component={Animations} />
+      <Stack.Screen name="One" component={One} />
+      <Stack.Screen name="Basic" component={Basic} />
     </Stack.Navigator>
   );
 };
