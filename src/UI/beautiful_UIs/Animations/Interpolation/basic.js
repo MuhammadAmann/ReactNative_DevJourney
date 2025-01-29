@@ -17,7 +17,7 @@ import Animated, {
 } from 'react-native-reanimated';
 
 export const Basic = ({navigation}) => {
-  const animation = useSharedValue(1);
+  const animation = useSharedValue(0.4);
   const [clicked, setClicked] = useState(false);
   const animatedStyle = useAnimatedStyle(() => {
     return {
@@ -37,7 +37,8 @@ export const Basic = ({navigation}) => {
 
         // For Scaling Item
         {
-          scale: animation.value,
+          // scale: animation.value,
+          scaleY: animation.value,
         },
       ],
     };
@@ -125,7 +126,7 @@ export const Basic = ({navigation}) => {
           }}
           onPress={() => {
             clicked
-              ? (animation.value = withTiming(1, {duration: 2000}))
+              ? (animation.value = withTiming(1.5, {duration: 1000}))
               : (animation.value = withTiming(0.5, {duration: 1000}));
 
             setClicked(!clicked);

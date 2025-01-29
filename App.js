@@ -9,6 +9,7 @@ import {persistor, store} from './src/Redux/store';
 import {PersistGate} from 'redux-persist/integration/react';
 import HeaderComponent from './src/Components/header';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 
 LogBox.ignoreLogs(['Warning: ...']);
 
@@ -18,10 +19,12 @@ const App = () => {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <SafeAreaProvider>
-          <HeaderComponent />
-          <NavigationContainer>
-            <StackNavigations />
-          </NavigationContainer>
+          <GestureHandlerRootView>
+            <HeaderComponent />
+            <NavigationContainer>
+              <StackNavigations />
+            </NavigationContainer>
+          </GestureHandlerRootView>
         </SafeAreaProvider>
       </PersistGate>
     </Provider>

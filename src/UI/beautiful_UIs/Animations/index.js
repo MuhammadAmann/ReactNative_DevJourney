@@ -22,6 +22,14 @@ export const Animations = ({navigation}) => {
       componentName: 'Basic Animations',
       navigationName: 'Basic',
     },
+    {
+      componentName: 'Carousel Slider',
+      navigationName: 'CarouselSlider',
+    },
+    {
+      componentName: 'Box Scalling',
+      navigationName: 'BoxScalling',
+    },
   ];
   return (
     <View style={styles.main}>
