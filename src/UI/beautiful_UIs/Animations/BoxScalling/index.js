@@ -59,7 +59,7 @@ function BoxScaling({navigation}) {
           </Animated.View>
         </TouchableOpacity>
         <View style={{marginTop: 50}}>
-          <Text>TPress on Box to expand/collapse</Text>
+          <Text>Press on Box to expand/collapse</Text>
         </View>
       </View>
     </View>
