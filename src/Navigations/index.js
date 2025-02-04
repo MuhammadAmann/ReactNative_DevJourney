@@ -19,6 +19,7 @@ import One from '../UI/beautiful_UIs/Animations/Interpolation/one';
 import {Basic} from '../UI/beautiful_UIs/Animations/Interpolation/basic';
 import {CarouselSlider} from '../UI/beautiful_UIs/Animations/CarouselSlider';
 import BoxScalling from '../UI/beautiful_UIs/Animations/BoxScalling';
+import DragingObject from '../UI/beautiful_UIs/Animations/DragingObject';
 
 const Stack = createNativeStackNavigator();
 
@@ -42,6 +43,7 @@ const StackNavigations = ({}) => {
       <Stack.Screen name="Basic" component={Basic} />
       <Stack.Screen name="CarouselSlider" component={CarouselSlider} />
       <Stack.Screen name="BoxScalling" component={BoxScalling} />
+      <Stack.Screen name="DragingObject" component={DragingObject} />
     </Stack.Navigator>
   );
 };

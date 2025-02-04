@@ -30,6 +30,10 @@ export const Animations = ({navigation}) => {
       componentName: 'Box Scalling',
       navigationName: 'BoxScalling',
     },
+    {
+      componentName: 'Draging Objects',
+      navigationName: 'DragingObject',
+    },
   ];
   return (
     <View style={styles.main}>
