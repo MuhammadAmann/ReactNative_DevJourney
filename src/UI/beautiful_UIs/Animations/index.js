@@ -34,6 +34,10 @@ export const Animations = ({navigation}) => {
       componentName: 'Draging Objects',
       navigationName: 'DragingObject',
     },
+    {
+      componentName: 'Intsgram Like',
+      navigationName: 'IntsgramLike',
+    },
   ];
   return (
     <View style={styles.main}>

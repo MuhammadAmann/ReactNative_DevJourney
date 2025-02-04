@@ -7,4 +7,6 @@ export default {
   Buttons: require('../Assets/Images/buttons.jpg'),
   FoodList: require('../Assets/Images/foodList.png'),
   Animations: require('../Assets/Images/animations.png'),
+  Wallpaper: require('../Assets/Images/wallpaper.jpg'),
+  Heart: require('../Assets/Images/heart.png'),
 };
