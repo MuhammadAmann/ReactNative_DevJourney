@@ -162,12 +162,7 @@ const IntsgramLike = ({navigation}) => {
                 onActivated={() => {
                   setLike(!like), doubleTap;
                 }}>
-                <View
-                // onPress={() => {
-                //   doubleTap;
-                //   setLike(!like);
-                // }}
-                >
+                <View>
                   <Icon
                     name={like ? 'heart' : 'hearto'}
                     type={IconType.AntDesign}
