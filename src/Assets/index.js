@@ -9,4 +9,6 @@ export default {
   Animations: require('../Assets/Images/animations.png'),
   Wallpaper: require('../Assets/Images/wallpaper.jpg'),
   Heart: require('../Assets/Images/heart.png'),
+  Instagram: require('../Assets/Images/insta.png'),
+  Profile: require('../Assets/Images/profile.jpg'),
 };
