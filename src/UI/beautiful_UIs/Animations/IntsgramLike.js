@@ -233,7 +233,6 @@ const styles = StyleSheet.create({
     paddingBottom: 6 * heightRef,
     justifyContent: 'space-between',
     paddingHorizontal: 14 * widthRef,
-    // backgroundColor: 'red',
   },
   comment: {
     transform: [{rotateY: '-210deg'}],
