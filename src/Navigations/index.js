@@ -21,6 +21,7 @@ import {CarouselSlider} from '../UI/beautiful_UIs/Animations/CarouselSlider';
 import BoxScalling from '../UI/beautiful_UIs/Animations/BoxScalling';
 import DragingObject from '../UI/beautiful_UIs/Animations/DragingObject';
 import IntsgramLike from '../UI/beautiful_UIs/Animations/IntsgramLike';
+import SearchBar from '../UI/beautiful_UIs/Animations/SearchBar';
 
 const Stack = createNativeStackNavigator();
 
@@ -46,6 +47,7 @@ const StackNavigations = ({}) => {
       <Stack.Screen name="BoxScalling" component={BoxScalling} />
       <Stack.Screen name="DragingObject" component={DragingObject} />
       <Stack.Screen name="IntsgramLike" component={IntsgramLike} />
+      <Stack.Screen name="SearchBar" component={SearchBar} />
     </Stack.Navigator>
   );
 };

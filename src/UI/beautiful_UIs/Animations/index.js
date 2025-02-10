@@ -38,6 +38,10 @@ export const Animations = ({navigation}) => {
       componentName: 'Intsgram Like',
       navigationName: 'IntsgramLike',
     },
+    {
+      componentName: 'Animated Search Bar',
+      navigationName: 'SearchBar',
+    },
   ];
   return (
     <View style={styles.main}>
