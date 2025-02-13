@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React, {useCallback, useEffect, useMemo, useState} from 'react';
 import {
+  ActivityIndicator,
   FlatList,
   Image,
   Pressable,
@@ -17,124 +18,15 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 import Icon, {IconType} from 'react-native-dynamic-vector-icons';
+import {dummyData} from '../../../Assets/RealEstateData/DumyRealEstate';
 
-const dummyData = [
-  {
-    id: 0,
-    title: 'Rustic Bungalow',
-    description:
-      'Located in a prime location with easy access to public transport...',
-    image:
-      'https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2940&auto=format&fit=crop',
-  },
-  {
-    id: 1,
-    title: 'High-Rise Apartment',
-    description: 'An affordable home in a growing and desirable community...',
-    image:
-      'https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=2940&auto=format&fit=crop',
-  },
-  {
-    id: 2,
-    title: 'Family-Friendly Duplex',
-    description: 'An exclusive property in a secure and serene environment...',
-    image:
-      'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=2940&auto=format&fit=crop',
-  },
-  {
-    id: 3,
-    title: 'Family-Friendly Duplex',
-    description:
-      'Perfect for families, with spacious rooms and a private yard...',
-    image:
-      'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?q=80&w=2940&auto=format&fit=crop',
-  },
-  {
-    id: 4,
-    title: 'Suburban Townhouse',
-    description:
-      'Located in a prime location with easy access to public transport...',
-    image:
-      'https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=2940&auto=format&fit=crop',
-  },
-  {
-    id: 5,
-    title: 'Classic Brownstone',
-    description: 'A well-maintained home with a spacious backyard and pool...',
-    image:
-      'https://images.unsplash.com/photo-1593698054589-019f74f36a3d?q=80&w=2940&auto=format&fit=crop',
-  },
-  {
-    id: 6,
-    title: 'Elegant Penthouse',
-    description: 'Luxury meets convenience in this high-end property...',
-    image:
-      'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?q=80&w=2940&auto=format&fit=crop',
-  },
-  {
-    id: 7,
-    title: 'Minimalist Home',
-    description:
-      'Designed for contemporary living with top-notch facilities...',
-    image:
-      'https://images.unsplash.com/photo-1600607683853-0673a6418721?q=80&w=2940&auto=format&fit=crop',
-  },
-  {
-    id: 8,
-    title: 'Investment Property',
-    description: 'Move-in ready with high-end appliances and stylish decor...',
-    image:
-      'https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2940&auto=format&fit=crop',
-  },
-  {
-    id: 9,
-    title: 'Cozy Studio',
-    description:
-      'Perfectly situated near schools, parks, and shopping centers...',
-    image:
-      'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=2940&auto=format&fit=crop',
-  },
-  {
-    id: 10,
-    title: 'Mountain Cabin',
-    description:
-      'An ideal investment opportunity with high rental potential...',
-    image:
-      'https://images.unsplash.com/photo-1598228723793-52759e82b334?q=80&w=2940&auto=format&fit=crop',
-  },
-  {
-    id: 11,
-    title: 'Lakefront Property',
-    description:
-      'Enjoy a peaceful environment with breathtaking nature views...',
-    image:
-      'https://images.unsplash.com/photo-1572307480813-6ae928b6da87?q=80&w=2940&auto=format&fit=crop',
-  },
-  {
-    id: 12,
-    title: 'Spacious Villa',
-    description: 'A beautiful home with stunning views and modern amenities...',
-    image:
-      'https://images.unsplash.com/photo-1600585154154-18017b6470b9?q=80&w=2940&auto=format&fit=crop',
-  },
-  {
-    id: 13,
-    title: 'City Skyline View',
-    description: 'Boasts a spectacular view and top-tier craftsmanship...',
-    image:
-      'https://images.unsplash.com/photo-1592595896551-12b38a35fc3d?q=80&w=2940&auto=format&fit=crop',
-  },
-  {
-    id: 14,
-    title: 'Beachfront House',
-    description: 'A dream home for those who love comfort and style...',
-    image:
-      'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd9?q=80&w=2940&auto=format&fit=crop',
-  },
-];
+// Keep this data in seperate File
+// const RealEstateData = dummyData;
 
 const SearchBar = ({navigation}) => {
   const [value, setValue] = useState(false);
+  const [data, SetData] = useState([]);
+  const [search, setSearch] = useState('');
   const animation = useSharedValue(0);
 
   const animatedStyle = useAnimatedStyle(() => {
@@ -158,11 +50,32 @@ const SearchBar = ({navigation}) => {
     };
   });
 
+  useEffect(() => {
+    SetData(dummyData);
+  }, []);
+
+  const FilteredData = useMemo(() => {
+    console.log('memo');
+    if (!search.trim()) {
+      console.log('empty');
+      return data;
+    } else {
+      console.log('searching...');
+      return data.filter(data =>
+        data.title.toLowerCase().includes(search.toLowerCase()),
+      );
+    }
+  }, [search, data]);
+  const handleChangeText = useCallback(text => {
+    console.log('Text');
+    return setSearch(text);
+  }, []);
+
   return (
     <View style={styles.mainContainer}>
       <View style={styles.header}>
         <View>
-          <Text style={styles.headerText1}>
+          <Text onPress={() => navigation.goBack()} style={styles.headerText1}>
             Welcome Back{' '}
             <Icon
               color="#dfb088"
@@ -188,6 +101,8 @@ const SearchBar = ({navigation}) => {
             placeholder="Search for your property..."
             style={styles.textInput}
             editable={value ? true : false}
+            onChangeText={handleChangeText}
+            value={search}
           />
         </Animated.View>
         <TouchableOpacity
@@ -204,24 +119,36 @@ const SearchBar = ({navigation}) => {
           />
         </TouchableOpacity>
       </View>
-      <FlatList
-        contentContainerStyle={styles.itemsList}
-        data={dummyData}
-        keyExtractor={item => item.id.toString()}
-        renderItem={({item}) => {
-          return (
-            <View style={styles.listTile}>
-              <Image source={{uri: item.image}} style={styles.listImage} />
-              <View style={{marginLeft: 10 * widthRef, width: 240}}>
-                <Text style={styles.itemTitle}>{item.title}</Text>
-                <Text numberOfLines={1} style={styles.des}>
-                  {item.description}
-                </Text>
+      {FilteredData.length === 0 ? (
+        <View>
+          <Text style={{textAlign: 'center', marginTop: 100 * heightRef}}>
+            No property found!
+          </Text>
+        </View>
+      ) : (
+        <FlatList
+          contentContainerStyle={styles.itemsList}
+          data={FilteredData}
+          keyExtractor={item => item.id.toString()}
+          renderItem={({item}) => {
+            return (
+              <View style={styles.listTile}>
+                {item.image ? (
+                  <Image source={{uri: item.image}} style={styles.listImage} />
+                ) : (
+                  <ActivityIndicator color={'red'} size={24} />
+                )}
+                <View style={{marginLeft: 10 * widthRef, width: 240}}>
+                  <Text style={styles.itemTitle}>{item.title}</Text>
+                  <Text numberOfLines={1} style={styles.des}>
+                    {item.description}
+                  </Text>
+                </View>
               </View>
-            </View>
-          );
-        }}
-      />
+            );
+          }}
+        />
+      )}
     </View>
   );
 };
@@ -259,6 +186,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10 * heightRef,
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'flex-end',
   },
   searchIconView: {
     backgroundColor: 'rgba(107, 78, 230, 0.1)',
@@ -291,7 +219,7 @@ const styles = StyleSheet.create({
   },
   itemsList: {
     paddingHorizontal: 24 * widthRef,
-    paddingVertical: 20 * heightRef,
+    paddingBottom: 30 * heightRef,
   },
   listTile: {
     flexDirection: 'row',
