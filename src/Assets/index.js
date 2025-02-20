@@ -11,4 +11,5 @@ export default {
   Heart: require('../Assets/Images/heart.png'),
   Instagram: require('../Assets/Images/insta.png'),
   Profile: require('../Assets/Images/profile.jpg'),
+  Res1: require('../Assets/Images/res1.png'),
 };
