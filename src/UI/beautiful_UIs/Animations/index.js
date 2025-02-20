@@ -42,6 +42,10 @@ export const Animations = ({navigation}) => {
       componentName: 'Animated Search Bar',
       navigationName: 'SearchBar',
     },
+    {
+      componentName: 'Card Swiper',
+      navigationName: 'CardSwiper',
+    },
   ];
   return (
     <View style={styles.main}>
