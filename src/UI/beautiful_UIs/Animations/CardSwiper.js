@@ -102,17 +102,6 @@ const data = [
   },
 ];
 
-const reviews = [
-  'Absolutely loved this app! Super easy to use, intuitive design, and has everything I needed for daily tasks.',
-  'Great experience overall. Few minor bugs but excellent support team. Looking forward to more updates and new features.',
-  'Decent functionality but lacks some customization options. Works well for basic needs, hoping future updates add improvements.',
-  'Perfect app! Fast, reliable, and user-friendly. Makes my day productive and helps me manage tasks effortlessly.',
-  'App is okay but needs more features. The user interface could be more engaging. Hoping for improvements soon.',
-  'Very useful and practical. The interface is clean and simple. Could use more themes and notification options though.',
-  'It works well for the most part, but performance slows down occasionally. Needs optimization for smoother experience.',
-  'Fantastic! This app truly makes life easier. Highly recommend it for anyone looking for seamless task management.',
-];
-
 const CardSwiper = ({navigation}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const currentItem = data[currentIndex];
