@@ -173,8 +173,8 @@ const CardSwiper = ({navigation}) => {
           cardStyle={styles.card2}
           disableTopSwipe={false}
           disableBottomSwipe={false}
-          stackSize={2} // Only one card visible
-          stackScale={0} // No scaling for extra cards
+          stackSize={2}
+          stackScale={0}
           stackSeparation={4}
         />
       </View>
