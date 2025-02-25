@@ -7,6 +7,7 @@ import Icon, {IconType} from 'react-native-dynamic-vector-icons';
 import HeaderComponent from '../../../Components/header';
 import Assets from '../../../Assets';
 import {AppColors} from '../../../Assets/AppColors';
+import LinearGradient from 'react-native-linear-gradient';
 
 const data = [
   {
@@ -105,12 +106,17 @@ const data = [
 const CardSwiper = ({navigation}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const currentItem = data[currentIndex];
+  const [loadingImage, setLoadingImage] = useState(true);
+
   const [reviewIndex, setReviewIndex] = useState(0);
   const handleNext = () => {
+    setLoadingImage(true);
     setCurrentIndex(prevIndex => prevIndex + 1);
     setReviewIndex(0);
   };
   const handlePrev = () => {
+    setLoadingImage(true);
+
     setCurrentIndex(prevIndex =>
       prevIndex === 0 ? data.length - 1 : prevIndex - 1,
     );
@@ -125,8 +131,8 @@ const CardSwiper = ({navigation}) => {
         <Icon
           name="arrow-left"
           type={IconType.Feather}
-          size={50}
-          style={{marginBottom: 10}}
+          size={30 * widthRef}
+          style={{marginBottom: 10, color: 'orange'}}
         />
       </TouchableOpacity>
       <Text
@@ -138,14 +144,23 @@ const CardSwiper = ({navigation}) => {
         }}>
         Restaurants Reviews
       </Text>
-      <View style={styles.cardContainer}>
-        {currentItem.image ? (
-          <Image source={{uri: currentItem.image}} style={styles.profile} />
-        ) : (
-          <ActivityIndicator size={30} color="gray" />
+      <LinearGradient
+        colors={['#734b6d', '#42275a']}
+        style={styles.cardContainer}>
+        {loadingImage && ( // ✅ Show loader while image is loading
+          <ActivityIndicator
+            size={40}
+            color="white"
+            style={{marginVertical: 20}}
+          />
         )}
+        <Image
+          source={{uri: currentItem?.image}}
+          style={[styles.profile]}
+          onLoad={() => setLoadingImage(false)} // 🔄 Hide loader when loaded
+        />
         <Text style={styles.reviewsText}> Review</Text>
-        <Text style={styles.subTitle}>{currentItem.name}</Text>
+        <Text style={styles.subTitle}>{currentItem?.name}</Text>
         <Text numberOfLines={3} style={styles.reviewBody}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -157,7 +172,19 @@ const CardSwiper = ({navigation}) => {
           key={currentIndex}
           renderCard={(card, index) => (
             <View style={styles.card}>
-              <Text>⭐⭐⭐⭐⭐</Text>
+              <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                {[1, 1, 1, 1, 1].map(() => {
+                  return (
+                    <Icon
+                      name="star"
+                      type={IconType.Ionicons}
+                      size={16 * widthRef}
+                      color={'orange'}
+                      style={{marginRight: 2 * widthRef}}
+                    />
+                  );
+                })}
+              </View>
               <Text numberOfLines={3} style={styles.text}>
                 {card}
               </Text>
@@ -177,7 +204,7 @@ const CardSwiper = ({navigation}) => {
           stackScale={0}
           stackSeparation={4}
         />
-      </View>
+      </LinearGradient>
 
       <View
         style={{
@@ -220,6 +247,8 @@ const styles = StyleSheet.create({
     height: 160,
     borderRadius: 100,
     resizeMode: 'cover',
+    borderColor: AppColors.halfWhite,
+    borderWidth: 2,
   },
   cardContainer: {
     // flex: 1,
@@ -230,6 +259,14 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(107, 78, 230, 0.4)',
     height: '60%',
     padding: 20 * widthRef,
+    shadowColor: 'gray',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.5,
+    shadowRadius: 2,
+    elevation: 5,
   },
   reviewsText: {
     fontSize: 24 * widthRef,
@@ -239,7 +276,7 @@ const styles = StyleSheet.create({
   },
   subTitle: {
     fontSize: 18 * widthRef,
-    color: '#121212',
+    color: '#fff',
     marginTop: 10 * heightRef,
     fontWeight: '600',
   },
@@ -256,15 +293,16 @@ const styles = StyleSheet.create({
     marginTop: 10 * heightRef,
     marginBottom: 20 * heightRef,
     textAlign: 'center',
-    fontWeight: '500',
+    fontWeight: '400',
     lineHeight: 20 * heightRef,
-    color: '#707070',
-    fontSize: 14 * fontRef,
+    color: '#fff',
+    fontSize: 12 * fontRef,
+    marginHorizontal: 16 * widthRef,
   },
   card: {
     borderRadius: 20,
-    borderWidth: 1,
-    borderColor: 'red',
+    // borderWidth: 1,
+    // borderColor: 'red',
     backgroundColor: 'white',
     height: 100 * heightRef,
     width: 250 * widthRef,
@@ -272,6 +310,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20 * widthRef,
     // justifyContent: 'center',
     // alignItems: 'center',
+    shadowColor: 'orange',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.5,
+    shadowRadius: 2,
+    elevation: 5,
   },
   card2: {
     height: 100 * heightRef,
